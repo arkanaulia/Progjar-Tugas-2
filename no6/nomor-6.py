@@ -56,7 +56,6 @@ try:
                     sock.sendall(response_header.encode('utf-8') + response_data.encode('utf-8'))
 
                 elif (request_file == '/dataset' or request_file == 'dataset'):
-                    print('WOKE!')
                     response_data = """<!DOCTYPE html>
                     <html lang="en">
                     <head>
@@ -82,12 +81,9 @@ try:
                 else:
                     request_file = unquote(request_file)
                     if (os.path.isfile(DATASET+request_file)):
-                        # print('WOKEE!')
                         f = open(DATASET+request_file, 'rb')
                         response_data = f.read()
                         f.close()
-
-                        # f = open("/ext2mime.txt")
                         filename = request_file.split('.')[0].strip('/')
                         print("filename : ", filename)
                         extension = request_file.split('.')[1]
