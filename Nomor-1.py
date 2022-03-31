@@ -20,17 +20,11 @@ while True:
 response_header = response.split('\r\n\r\n')[0]
 # print(response_header)
 
-# NOMOR 1
 status_code = response_header.split('\r\n')[0]
 status_code = status_code.split()[1:]
 status_code= ' '.join(status_code)
 print(status_code)
 
-# NOMOR 3
-respon = response_header.split('\r\n')[0]
-respon = respon.split()[0]
-# respon= ' '.join(respon)
-print(respon)
 
 # print(response)
 client_socket.close()
